@@ -1,0 +1,26 @@
+<%- include header.ejs  %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>员工信息</h2>
+            <table class="table table-condensed">
+                <tr><td>姓名</td><td>编号</td></tr>
+                <% for(var i = 0, len = records.length; i < len; i++) { %>
+                <tr><td><%= records[i].name%></td><td><%= records[i].stuId%></td></tr>
+                <% } %>
+            </table>
+            <ul class="pagination">
+                <% for(var i = 0;i < pageCount; i++) { %>
+                <% if(page == (i + 1)){ %>
+                <li class="active btnPage"><a href="/home?page=<%=i+1%>"><%=i+1 %></a></li>
+                <% } else { %>
+                <li class="btnPage"><a href="/home?page=<%=i+1%>"><%=i+1 %></a></li>
+                <% } %>
+                <% } %>
+            </ul>
+            <a href="/addStu">添加</a>&nbsp;<a href="/delStu">删除</a>&nbsp;<a href="/editStu">修改</a>&nbsp;<a href="/search">查找</a>
+        </div>
+    </div>
+</div>
+
+<%- include footer.ejs %>

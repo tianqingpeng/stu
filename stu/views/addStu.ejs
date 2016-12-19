@@ -1,0 +1,24 @@
+<%- include header.ejs%>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-5">
+            <form role="form" method="post">
+                <div class="form-group">
+                    <h2>添加信息</h2>
+                </div>
+                <div class="form-group">
+                    <label for="">姓名</label>
+                    <input type="text" class="form-control" name="name" value=""  placeholder="name">
+                </div>
+                <div class="form-group">
+                    <label for="">编号</label>
+                    <input type="text" class="form-control" name="stuId" value=""  placeholder="stuId">
+                </div>
+                <button type="submit" class="btn btn-success">确认</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include footer.ejs%>

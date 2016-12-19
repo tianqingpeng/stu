@@ -1,0 +1,39 @@
+ <%- include header.ejs %>
+
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-4">
+              <form method="post" role="form" class="">
+                  <div class="form-group">
+                      <h3>查询信息</h3>
+                  </div>
+                  <div class="form-group">
+                      <input type="radio" checked name="search_type" value="0" id="_1">
+                      <label for="_1">按姓名查找</label>
+                      <input type="radio" name="search_type" value="1" id="_2">
+                      <label for="_2">按编号查找</label>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" name="keyword">
+                      <button type="submit" class="btn btn-success">查找</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="row">
+
+      </div>
+      <div class="row">
+          <div class="col-md-4">
+              <% if(result) { %>
+              <table class="table">
+                  <tr><td>姓名</td><td>编号</td></tr>
+                  <tr><td><%=result[0].name %></td><td><%=result[0].stuId %></td></tr>
+              </table>
+              <a href='/'>查询完成 点击返回主页</a>
+              <% } %>
+          </div>
+      </div>
+  </div>
+
+ <%- include footer.ejs %>
